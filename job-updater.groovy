@@ -1,5 +1,5 @@
 timeout(time: 5, unit: 'MINUTES') {
-    node('gradle') {
+    node('master') {
 
 
         // echo "YAML_CONFIG content: ${env.YAML_CONFIG}"
