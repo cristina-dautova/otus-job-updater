@@ -1,5 +1,5 @@
 timeout(time: 5, unit: 'MINUTES') {
-    node('main') {
+    node('gradle') {
 
         def config = readYaml text:$YAML_CONFIG
         def jenkinsUrl = config['JENKINS_URL']
