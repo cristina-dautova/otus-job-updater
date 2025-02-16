@@ -16,16 +16,15 @@ timeout(time: 5, unit: 'MINUTES') {
             string(name: 'YAML_CONFIG', defaultValue: '', description: 'YAML configuration content')
         }
         
-        stages {
-            stage('Read YAML') {
-                    script {
-                        def config = readYaml text: params.YAML_CONFIG
-                        echo "Jenkins URL: ${config.JENKINS_URL}"
-                        echo "Username: ${config.JENKINS_USERNAME}"
-                        echo "Password: ${config.JENKINS_PASSWORD}"
-                    }
+        stage('Read YAML') {
+            script {      
+                def config = readYaml text: params.YAML_CONFIG
+                echo "Jenkins URL: ${config.JENKINS_URL}"
+                echo "Username: ${config.JENKINS_USERNAME}"        
+                echo "Password: ${config.JENKINS_PASSWORD}"
             }
         }
+
 
         stage('checkout') {
             checkout scm
