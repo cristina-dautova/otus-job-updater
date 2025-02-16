@@ -1,10 +1,12 @@
 timeout(time: 5, unit: 'MINUTES') {
     node('gradle') {
 
-        def config = readYaml text:$YAML_CONFIG
 
         echo "YAML_CONFIG content: ${env.YAML_CONFIG}"
         echo "YAML_CONFIG content: ${params.YAML_CONFIG}"
+        
+        def config = readYaml text:$YAML_CONFIG
+
         
         def jenkinsUrl = config['JENKINS_URL']
         def username = config['JENKINS_USERNAME']
