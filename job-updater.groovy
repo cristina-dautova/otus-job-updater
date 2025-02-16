@@ -22,7 +22,7 @@ timeout(time: 5, unit: 'MINUTES') {
         }
 
         stage('Update job') {
-            sh "sudo docker run -t localhost:5005/jenkins_updater config.JENKINS_URL config.JENKINS_USERNAME config.JENKINS_PASSWORD"
+            sh "docker run -t localhost:5005/jenkins_updater config.JENKINS_URL config.JENKINS_USERNAME config.JENKINS_PASSWORD"
         }
     }
 }
