@@ -22,10 +22,8 @@ timeout(time: 5, unit: 'MINUTES') {
         }
 
         stage('Update job') {
-            echo "Jenkins URL: ${config.JENKINS_URL}"
-                echo "Username: ${config.JENKINS_USERNAME}"        
-                echo "Password: ${config.JENKINS_PASSWORD}"
-            sh "docker run -t localhost:5005/jenkins_updater config.JENKINS_URL config.JENKINS_USERNAME config.JENKINS_PASSWORD"
+           // sh "docker run -t localhost:5005/jenkins_updater config.JENKINS_URL config.JENKINS_USERNAME config.JENKINS_PASSWORD"
+             sh "docker run -t localhost:5005/jenkins_updater http://127.0.0.1/ admin admin"
         }
     }
 }
