@@ -1,4 +1,4 @@
-timeout(5, timeUnit = 'MINUTES') {
+timeout(time: 5, unit: 'MINUTES') {
     node('main') {
 
         def config = readYaml text:$YAML_CONFIG
